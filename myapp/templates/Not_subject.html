@@ -1,0 +1,144 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yub_nonsubject</title>
+
+    <style>
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin:0%;
+            padding:0%;
+            background-color: #F2777F;
+            list-style-type: none
+            }
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .nav-item a{
+            text-align: center;
+            text-decoration: none;
+            color:seashell;
+        }
+        .nav-item:nth-child(2){background-color: rgba(139, 27, 27, 0.986)}
+        .nav-item:nth-child(4){background-color: rgba(139, 27, 27, 0.986)}
+        .nav-item:hover{background-color: rgba(17, 161, 147, 0.726)}
+
+        #jb-container {
+            width: 940px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 5px solid #F2777F;
+            }
+        #jb-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #F2777F;
+        }
+        #jb-content {
+            width: 580px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            border: 1px solid #F2777F;
+        }
+        #jb-sidebar {
+            width: 260px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            
+        }
+        #jb-footer {
+            clear: both;
+            padding: 20px;
+            border: 1px solid #F2777F;
+        }
+
+        @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+       
+        body {
+        font-family: 'GyeonggiBatang';
+        }
+
+    </style>
+
+</head>
+<body> 
+    <body background="{% static 'backgroung.jpg'%}">
+    <body style="text-align: center"></body>
+    <a href="{% url 'home' %}"><img src="{% static 'title-blue.jpg'%}" alt="title"> 
+    <br><br>
+
+
+    <nav>
+        <ul class="nav-container">
+            <li class="nav-item"><a href="{% url 'home' %}">HOME</a>
+            <li class="nav-item"><a href="{% url 'Lab_home' %}">LAB</a>
+            <li class="nav-item"><a href="{% url 'Not_subject' %}">non-sub</a>
+            <li class="nav-item"><a href="{% url 'external' %}">active</a>
+            <li class="nav-item"><a href="{% url 'result' %}">result</a>
+            <li class="nav-item"><a href="{% url 'achievement' %}">Achievement</a>
+        </ul>
+    </nav>
+
+    <br><p class="sub-title">비교과 활동</p><br><br>
+
+        <div id="jb-container">
+            <div id="jb-header">
+              <h1>멋쟁이 사자처럼</h1>
+            </div>
+            <div id="jb-content">
+              <h2>활동내용</h2>
+              <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+            </div>
+            <div id="jb-sidebar">
+              <h2>동아리</h2>
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAnFBMVEUAAAD////wmDdnZ2d/f3/R0dHShTDtljaZmZn09PS3t7f3nDnnkjXv7+/e3t7CwsLX19dKSkoxHwsgICA+Pj5NMRKFhYWsrKympqZra2tISEhRUVHLy8thYWF3d3fk5OSSkpI0NDQsLCwiIiJZWVmKiooLCws4JA2qbCdGLBCaYiM/KA7cizKMWSArHAmEUx4hFQgUDQXFfS11ShtQSi5pAAAEXklEQVR4nO2ca3+aOhyAvW5ahlLbqXipl9ruXLaznp3v/92O5AIJgopAOvp7njfTBMj/MSQkaVirBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuXz77OXxKf+sdh5Td5Ffzx9eJ5vihv7BXdhF+Pol27Gw4cxdzEXJrsaChv69u4CL8+f3DMdihnN30d7GX6eKRQw3j+5CvZW/T6qxgOHAXZxlSFfj1YabnbsgyzH55N1iuHUVXxX88AobjvbuwquCf4xqvMpw6yqy6vjpedcbBg/uAquOt1/etYa/5Sj0Gn52vGsM+42sQMm/ohovGPbcxVMH/x2r8azh6tVdMDXx6+z88MldILXxds7wQzDBsPFg2HwwbD4YNh8Mmw+GzQfD5jPxOl/y6EzeO7oqmOT9WfGI9/W9o6sCDJsPhs3n4xu+dT7n8jEMAQAAAN6V+2mv15s+p1LXvSg1+hR96HWTHPF9Gv1R96l3gnGdrkhIlybOCc3i54Ef7cXsD8y9YGF0mPmH42cR5W07bgdio0R6s+dKpEaf5EaYOGMsN45EZQ0zNlUu4gOD+AomcmNbYrIxt0ut4/SRSDAUlyLhrkLDsW3Y1+l37eRw/6xhP9NQ/Coj9eU1SJ0d7yhSGUm1OjOcJTVY3vAx4/yDZeg7N5zLgtXdVNJwl3F6u901Ddtjx4ZbWazuKIShPzZZJffVRcO4GQfzl5dZ/HPtTMP2i1PDqSw0bv++UbunXDJULbq9Ut1vqL5vLEN9UzgxfJJFJg8AYRi0crhguFMGyYboB1WpU8tw6M4wtG+bsoaqCs2YVc/jW4bqJnFguJblbY1jShmq+K1M1VMvLUNZy7Ubrh7T91SrXDu8l9ez37rYx4nSMDGu31ANPVbWMRlPC+NFn/OGqtda2Lm+LkUNiIK4oms31CwvGBp1ct5w3s7KlmPFjTZ8UE+UwKHhsCrDWaahLNVPDJf6ss4MrWbnoA71IGO9cGCouvdtNYaqHaYmbfKKgWGopNuH+g1n6kCjcyjTl6rbz54/qr70zjRUTXFYu2F0bVls0hQreB6OrEzVOEPL0JyB1GgoInmVxcSPjCrGNOY8Xru0LEN9Q9dsKK3UuEa/GFLKUOskLyK+qnHpLGWolxVKGqbfeMyeH86sqKqZW+ha1HMLcYplmHRpZQw3Ji+5c3w5tvGNgod9kyD5paThyLisv8icH262h+V6EC/Y9E4N91UYWgxyDZ/lAePEMEV6jm+xvGKOL8d9tqGeuLkwtCaJJQ0z12mUQ8owa65Vl6Fu9rsKDDOO0bPPtKFqHlUa5q6X6idw67r10rSh+DdZL+2a66XxgoZeLzVGPA8iYdy6hcewmyI8dhdL8SHKj7JDY06xF8eHx0pcp088Jic/+yEzU5xjLl3fz5TkaGC8PytODs23waIww9/6Pyk4x36xaPC7iQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwfvwPJUxEPansqD4AAAAASUVORK5CYII="/>
+              <ul>
+                <li>코딩</li>
+                <li>어려움</li>
+                <li>홀리뎀</li>
+              </ul>
+            </div>
+            <div id="jb-footer">
+              <p>Copyright</p>
+            </div>
+        </div>
+    <br><br>
+        <div id="jb-container">
+            <div id="jb-header">
+                <h1>유 노(Know) 아두이노</h1>
+            </div>
+        <div id="jb-content">
+          <h2>활동내용</h2>
+          <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+        </div>
+        <div id="jb-sidebar">
+          <h2>동아리</h2>
+          <img src="data:image/jpeg;base64,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"/>
+           <ul>
+            <li>이걸</li>
+            <li>왜</li>
+            <li>만들었을까</li>
+          </ul>
+        </div>
+        <div id="jb-footer">
+          <p>Copyright</p>
+        </div>
+    </div>
+
+    <img src="{% static 'total-bottom.jpg'%}" alt="bottom" width="800" height="300">
+
+
+
+</body>
+

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <link href="style.css" rel="stylesheet1" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yub</title>
+    
+
+    <style>
+        * {margin: 20px 10px 10px}
+        title {text-align: center; }
+    </style>
+
+</head>
+
+<body>
+    <body style="text-align: center"></body>
+    <body background="{% static 'backgroung.jpg' %}">
+    <p class="title"><a href="{% url 'home' %}"><img src="{% static 'title.jpg'%}" alt="title"></p>
+    
+    <br>
+    <a href="{% url 'Lab_home' %}"><span class="img"><img src="{% static 'LAB.jpg'%}" alt="LAB" width="450" height="300">
+    <a href="{% url 'Not_subject' %}"><img src="{% static 'nonsubject.jpg'%}" alt="nonsubject" width="450" height="300">
+    <a href="{% url 'external' %}"><img src="{% static 'external.jpg'%}" alt="external" width="450" height="300">
+    <br><br>
+    <a href="{% url 'result' %}"><img src="{% static 'result.jpg'%}" alt="result" width="450" height="300">
+    <a href="{% url 'achievement' %}"><img src="{% static 'achievement.jpg'%}" alt="title" width="450" height="300">
+    
+    <img src="{% static 'bottom.jpg'%}" alt="bottom" align="right"></a>
+            
+</body>
+</html>

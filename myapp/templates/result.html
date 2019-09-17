@@ -1,0 +1,126 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yub_result</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Indie+Flower|News+Cycle|Quicksand|Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+    <style>
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin:0%;
+            padding:0%;
+            background-color: #F2777F;
+            list-style-type: none
+            }
+        .nav-item {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .nav-item a{
+            text-align: center;
+            text-decoration: none;
+            color:seashell;
+        }
+        .nav-item:nth-child(2){background-color: rgba(139, 27, 27, 0.986)}
+        .nav-item:nth-child(6){background-color: rgba(139, 27, 27, 0.986)}
+        .nav-item:hover{background-color: rgba(17, 161, 147, 0.726)}
+
+        #jb-container {
+            width: 940px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 5px solid #F2777F;
+            }
+        #jb-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #F2777F;
+        }
+        #jb-content {
+            width: 580px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            border: 1px solid #F2777F;
+        }
+        #jb-sidebar {
+            width: 260px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            
+        }
+        #jb-footer {
+            clear: both;
+            padding: 20px;
+            border: 1px solid #F2777F;
+        }
+        @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+       
+        body {
+        font-family: 'GyeonggiBatang';
+        }
+        
+        .sub-title{font-size: 40px;
+        font: bolder;
+        color :white;
+        padding: 0%;
+        margin: 0%;
+        }
+
+    </style>
+
+</head>
+<body> 
+    <body background="{% static 'backgroung.jpg'%}">
+    <body style="text-align: center"></body>
+    <a href="{% url 'home' %}"><img src="{% static 'title-blue.jpg'%}" alt="title">  
+        <nav>
+                <ul class="nav-container">
+                    <li class="nav-item"><a href="{% url 'home' %}">HOME</a>
+                    <li class="nav-item"><a href="{% url 'Lab_home' %}">LAB</a>
+                    <li class="nav-item"><a href="{% url 'Not_subject' %}">non-sub</a>
+                    <li class="nav-item"><a href="{% url 'external' %}">active</a>
+                    <li class="nav-item"><a href="{% url 'result' %}">result</a>
+                    <li class="nav-item"><a href="{% url 'achievement' %}">Achievement</a>
+                </ul>
+            </nav>
+
+    <!--<br><br><p class="sub-title">result</p><br><br>-->
+    <br><br>
+
+    <div id="jb-container">
+            <div id="jb-header">
+              <h1>NANO KOREA 2019 _ symposium</h1>
+            </div>
+            <div id="jb-content">
+              <h2>활동내용</h2>
+              <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+            </div>
+            <div id="jb-sidebar">
+              <h2>Sidebar</h2>
+              <img src="data:image/png;base64,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"/>
+    
+              <ul>
+                <li>Lorem</li>
+                <li>Ipsum</li>
+                <li>Dolor</li>
+              </ul>
+            </div>
+            <div id="jb-footer">
+              <p>Copyright</p>
+            </div>
+          </div>
+
+    <img src="{% static 'total-bottom.jpg'%}" alt="bottom" width="800" height="300">
+
+
+</body>
+</html>

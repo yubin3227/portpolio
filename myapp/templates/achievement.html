@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yub_achievement</title>
+
+    <style>
+        @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+       
+       body {
+       font-family: 'GyeonggiBatang';
+       }   
+
+       text{ font-size: 200%
+       }
+    
+    </style>
+
+
+
+</head>
+<body>
+    <body background="{% static 'backgroung.jpg'%}">
+    <body style="text-align: center"></body>
+    <a href="{% url 'home' %}"><img src="{% static 'title.jpg'%}" alt="title"></a>
+
+    <h1>achievement</h1>
+    <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBPqOSh.img?h=624&w=624&m=6&q=60&o=f&l=f&x=476&y=432"/>    
+    <h2 class="manu">학점</h2>
+    <span class="text">
+        <table>
+            <thead>
+                <tr> 학년 </tr>
+                <tr> 학기 </tr>
+                <tr> 점수 </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td>
+                    <td> 1 </td>
+                    <td> 4.25 </td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> 2 </td>
+                    <td> 4.4 </td>
+                </tr>
+                <tr>
+                    <td> 1 </td>
+                    <td> 1 </td>
+                    <td> 4.25 </td>
+                </tr>
+            </tbody>
+        </table>
+    </span>
+
+    <h2 class="manu">어학성적</h2>
+    <span class="text">
+        <ul>
+            <li> 토익 : 0 </li>
+            <li> 오픽 : 0 </li>
+        </ul>
+    </span>
+
+    <h2 class="manu">자격증</h2>
+    <span class="text">
+        <ul>
+            <li> 워드프로세서 (진행중)</li>
+            <li>컴퓨터활용능력 1급 (진행중)</li>
+            <li>컴퓨터활용능력 2급 (진행중)</li>
+        </ul>
+    </span>
+    
+    <h2 class="manu">기타</h2>
+    <img src="{% static 'total-bottom.jpg'%}" alt="bottom" width="800" height="300">
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+    {% load staticfiles %}
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Yub_result</title>
+        <link href="https://fonts.googleapis.com/css?family=Abel|Indie+Flower|News+Cycle|Quicksand|Shadows+Into+Light&display=swap" rel="stylesheet">
+        
+        <style>
+            .nav-container{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin:0%;
+                padding:0%;
+                background-color: #F2777F;
+                list-style-type: none
+                }
+            .nav-item {
+                padding: 15px;
+                cursor: pointer;
+            }
+            .nav-item a{
+                text-align: center;
+                text-decoration: none;
+                color:seashell;
+            }
+            .nav-item:nth-child(2){background-color: rgba(139, 27, 27, 0.986)}
+            .nav-item:nth-child(3){background-color: rgba(139, 27, 27, 0.986)}
+            .nav-item:hover{background-color: rgba(17, 161, 147, 0.726)}
+    
+            #jb-container {
+                width: 1000px;
+                margin: 0px auto;
+                padding: 20px;
+                border: 5px solid #F2777F;
+                }
+            #jb-header {
+                padding: 20px;
+                margin-bottom: 20px;
+                border: 1px solid #F2777F;
+            }
+            #jb-content {
+                width: 650px;
+                padding: 20px;
+                margin-bottom: 20px;
+                float: right;
+                border: 1px solid #F2777F;
+            }
+            #jb-sidebar {
+                width: 280px;
+                padding: 10px;
+                margin-bottom: 10px;
+                float: right;
+                
+            }
+            #jb-footer {
+                clear: both;
+                padding: 20px;
+                border: 1px solid #F2777F;
+            }
+            @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+           
+            body {
+            font-family: 'GyeonggiBatang';
+            color:rgb(63, 38, 38);
+            }
+            
+            h1{color:rgb(255, 255, 255)}
+    
+        </style>
+    
+    </head>
+    <body> 
+        <body background="{% static 'backgroung.jpg'%}">
+        <body style="text-align: center"></body>
+        <a href="{% url 'home' %}"><img src="{% static 'title-pink.jpg'%}" alt="title">  
+        
+            <nav>
+                <ul class="nav-container">
+                    <li class="nav-item"><a href="{% url 'Lab_home' %}">LAB_HOME</a>
+                    <li class="nav-item"><a href="{% url 'electrospinning' %}">Electrospinning</a>
+                    <li class="nav-item"><a href="{% url 'microneedle' %}">Microneedle</a>
+                </ul>
+            </nav> <br><br>
+    
+        
+        <div id="jb-container">
+                <div id="jb-header">
+                    <h1>electrospinning</h1>
+                </div>
+    
+                <div id="jb-content">
+                  <h2>제목: {{ blog.title }}</h2>
+                    <br>
+                        <div class="container">
+                                <p> 날짜: {{ blog.pub_date }}</p>
+                                <p>  {{ blog.body }} </p>
+                        </div> <br>
+                    
+                </div>
+    
+                <div id="jb-sidebar">
+                  <h2>Sidebar</h2>
+                  <ul>
+                    <li>Lorem</li>
+                    <li>Ipsum</li>
+                    <li>Dolor</li>
+                  </ul>
+                </div>
+                <div id="jb-footer">
+                  <p>Copyright</p>
+                </div>
+              </div>   
+    
+        <img src="{% static 'total-bottom.jpg'%}" alt="bottom" width="800" height="300">
+    
+    
+    </body>
+    </html>
